@@ -60,6 +60,25 @@ Build failed with 1 error(s) and 2 warning(s) in 4.3s
 
 After manually removing `FsUnit.Xunit.exe` section from `.deps.json`, `dotnet test` works fine.
 
+```diff
+       "FsUnit.xUnit/7.0.0": {
+         "dependencies": {
+           "FSharp.Core": "9.0.100",
+           "NHamcrest": "4.0.0",
+           "xunit.v3": "1.0.0"
+         },
+         "runtime": {
+           "lib/net6.0/FsUnit.Xunit.dll": {
+             "assemblyVersion": "1.0.0.0",
+             "fileVersion": "1.0.0.0"
+-          },
+-          "lib/net6.0/FsUnit.Xunit.exe": {
+-            "fileVersion": "1.0.0.0"
+           }
+         }
+       },
+```
+
 ```plaintext
 C:\Program Files\dotnet\sdk\9.0.101\MSBuild.dll -nologo --property:VsTestUseMSBuildOutput=true -property:VSTestVerbosity=diagnostic -property:VSTestArtifactsProcessingMode=collect -property:VSTestSessionCorrelationId=21048_91a7e8d0-bce6-4560-a143-3378d1997de5 -distributedlogger:Microsoft.DotNet.Tools.MSBuild.MSBuildLogger,C:\Program Files\dotnet\sdk\9.0.101\dotnet.dll*Microsoft.DotNet.Tools.MSBuild.MSBuildForwardingLogger,C:\Program Files\dotnet\sdk\9.0.101\dotnet.dll -maxcpucount -restore -target:VSTest -tlp:default=auto -verbosity:m -verbosity:diagnostic .\fsunit7.fsproj
 Restore complete (0.3s)
