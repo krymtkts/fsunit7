@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <Nullable>enable</Nullable>
-    <OutputType>Exe</OutputType>
     <RootNamespace>fsunit7</RootNamespace>
     <TargetFramework>net9.0</TargetFramework>
     <!--
