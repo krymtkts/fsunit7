@@ -97,3 +97,6 @@ Restore complete (0.3s)
 Test summary: total: 2, failed: 0, succeeded: 2, skipped: 0, duration: 3.7s
 Build succeeded with 2 warning(s) in 5.0s
 ```
+
+Automatically remove `FsUnit.Xunit.exe` with following configuration:
+https://github.com/fsprojects/FsUnit/issues/298#issuecomment-2565124825

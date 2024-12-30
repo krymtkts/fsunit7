@@ -31,4 +31,15 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="3.0.0" />
   </ItemGroup>
 
+  <!-- https://github.com/fsprojects/FsUnit/issues/298#issuecomment-2565124825 -->
+  <!-- Temporarily resolve the issue caused by FsUnit.XUnit 7.0 -->
+  <Target Name="RemoveFsUnitExe" AfterTargets="ResolvePackageAssets">
+    <FindInList List="@(RuntimeCopyLocalItems)" ItemSpecToFind="FsUnit.Xunit.exe" MatchFileNameOnly="true">
+      <Output TaskParameter="ItemFound" ItemName="_ToBeRemoved" />
+    </FindInList>
+    <ItemGroup>
+      <RuntimeCopyLocalItems Remove="@(_ToBeRemoved)" />
+      <ResolvedCompileFileDefinitions Remove="@(_ToBeRemoved)" />
+    </ItemGroup>
+  </Target>
 </Project>
