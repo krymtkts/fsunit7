@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FsUnit.xUnit" Version="7.0.0" />
+    <PackageReference Include="FsUnit.xUnit" Version="7.0.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="xunit.v3" Version="1.0.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="3.0.0" />
@@ -33,7 +33,7 @@
 
   <!-- https://github.com/fsprojects/FsUnit/issues/298#issuecomment-2565124825 -->
   <!-- Temporarily resolve the issue caused by FsUnit.XUnit 7.0 -->
-  <Target Name="RemoveFsUnitExe" AfterTargets="ResolvePackageAssets">
+  <!-- <Target Name="RemoveFsUnitExe" AfterTargets="ResolvePackageAssets">
     <FindInList List="@(RuntimeCopyLocalItems)" ItemSpecToFind="FsUnit.Xunit.exe" MatchFileNameOnly="true">
       <Output TaskParameter="ItemFound" ItemName="_ToBeRemoved" />
     </FindInList>
@@ -41,5 +41,5 @@
       <RuntimeCopyLocalItems Remove="@(_ToBeRemoved)" />
       <ResolvedCompileFileDefinitions Remove="@(_ToBeRemoved)" />
     </ItemGroup>
-  </Target>
+  </Target> -->
 </Project>

@@ -100,3 +100,6 @@ Build succeeded with 2 warning(s) in 5.0s
 
 Automatically remove `FsUnit.Xunit.exe` with following configuration:
 https://github.com/fsprojects/FsUnit/issues/298#issuecomment-2565124825
+
+Fixed in 7.0.1.
+https://github.com/fsprojects/FsUnit/issues/298#issuecomment-2565799708
